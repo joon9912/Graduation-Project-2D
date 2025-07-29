@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 28
-  productGUID: 9ddb0ab33a77357418378c1d770c2bde
+  productGUID: f91e135c9158ebe4b898f771aafe188a
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -12,8 +12,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
-  productName: Graduation Project 2D
+  companyName: GoldmetalStudio
+  productName: TopDown2DRPG
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -768,6 +768,7 @@ PlayerSettings:
   platformArchitecture: {}
   scriptingBackend:
     Android: 1
+    Standalone: 0
   il2cppCompilerConfiguration: {}
   il2cppCodeGeneration: {}
   il2cppStacktraceInformation: {}
@@ -798,14 +799,14 @@ PlayerSettings:
   editorAssembliesCompatibilityLevel: 1
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: Graduation Project 2D
+  metroPackageName: TopDown2DRPG
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: Graduation Project 2D
+  metroApplicationDescription: TopDown2DRPG
   wsaImages: {}
   metroTileShortName: 
   metroTileShowName: 0
@@ -876,10 +877,10 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: 096a05c0-4eed-4080-8e26-7d25d73e8ed1
+  cloudProjectId: 7ea05383-4a52-4813-95cb-2e7cb1f65dd6
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Graduation Project 2D
+  projectName: TopDown2DRPG
   organizationId: joon9912
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
