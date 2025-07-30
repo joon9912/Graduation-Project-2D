@@ -69,6 +69,7 @@ public class PlayerAction : MonoBehaviour
             && !manager.menuSet.activeSelf && !manager.keypadSet.activeSelf)
             manager.Action(scanObject);
     }
+
     void FixedUpdate()
     {
         // Move
