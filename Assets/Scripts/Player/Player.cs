@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     public Transform TF { get; protected set; }
 
     public StateMachine StateMachine { get; private set; }
-    public InputHandler InputHandler { get; private set; }
+    public InputManager InputHandler { get; private set; }
 
     // State들 
 
@@ -27,7 +27,6 @@ public class Player : MonoBehaviour
         TF = GetComponent<Transform>();
 
         StateMachine = new StateMachine();
-        InputHandler = GetComponent<InputHandler>();
 
         // Idle 초기화
     }
