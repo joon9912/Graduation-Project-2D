@@ -1,0 +1,23 @@
+﻿title: Start
+---
+
+// <<declare $characterName = "hello">>
+<<declare $goldAmount = 100>>
+// <<declare $hasAmulet = false>>
+
+// <<leap MyCharacter>>
+Monster: 어흥! #line:032c9b9 
+    -> Player: 제발 목숨만은 살려주세요! #line:075279e 
+        Monster: 싫어! #line:044bea5 
+    -> Player: 떡 하나 줄테니까 봐주세요! #line:0391318 
+        <<jump Dduk>>
+
+Player: 난 이렇게 죽는구나! 세상아 사요나라! #line:0d108b9 
+===
+title: Dduk
+---
+Monster: 흠... 떡이라 #line:037dfe4 
+Monster: 10개 정도면 충분할 것 같은데... #line:0f8adaa 
+
+Player: 집에 많아요! 집에만 다녀오게 해주세요! #line:0ff91b1 
+===
