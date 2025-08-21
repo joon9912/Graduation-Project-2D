@@ -332,7 +332,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: -2969016694365801900, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
       - {fileID: 1955328530927145255, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
-      m_AnimationSpeed: 2.027663
+      m_AnimationSpeed: 1.401577
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -5, y: 0, z: 0}
@@ -341,7 +341,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: -2969016694365801900, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
       - {fileID: 1955328530927145255, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
-      m_AnimationSpeed: 1.4836271
+      m_AnimationSpeed: 2.51259
       m_AnimationTimeOffset: 0
       m_Flags: 0
   m_TileAssetArray:
@@ -2367,7 +2367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 97eee827cb29e4e15ab954c3cbec8008, type: 3}
+  m_Actions: {fileID: -944628639613478452, guid: 45c1c2ffc75614c468359e8fd3b026de, type: 3}
   m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -2394,8 +2394,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: ab687c20-35b8-4c31-a597-3636f4e58916
-    m_ActionName: 'In Play/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]'
+    m_ActionId: 8c2b9d10-3827-44ee-b2dc-89ae398c3f42
+    m_ActionName: 'Player/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]'
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1488370664}
@@ -2410,8 +2410,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: b6a6244c-443e-4bd5-91ec-09bce99e0521
-    m_ActionName: 'In Play/Interact[/Keyboard/f]'
+    m_ActionId: 5f364bbc-3ab7-4f56-959a-99d844db25ff
+    m_ActionName: 'Player/Interaction[/Keyboard/f]'
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1488370664}
@@ -2426,8 +2426,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 998ad316-5787-4897-a93f-8b843b2bcdaa
-    m_ActionName: 'In Play/Sprint[/Keyboard/shift]'
+    m_ActionId: f0af5100-d7fd-4c08-b7a6-9e92a4ca4b8a
+    m_ActionName: 'Player/Sprint[/Keyboard/shift]'
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1488370664}
@@ -2442,11 +2442,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: c12a4dce-00be-4011-b9d9-51a411fa825f
-    m_ActionName: 'In Play/MenuOpenClose[/Keyboard/escape]'
+    m_ActionId: 447005e8-ac09-45c7-aaef-4e75266f759a
+    m_ActionName: 'Player/Escape[/Keyboard/escape]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: In Play
+  m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &1488370666
@@ -2464,6 +2464,9 @@ MonoBehaviour:
   rb: {fileID: 1488370662}
   animator: {fileID: 1488370663}
   spriteRenderer: {fileID: 1488370659}
+  movement: {fileID: 1891856463}
+  inputHandler: {fileID: 1488370664}
+  playerData: {fileID: 11400000, guid: fb9eb48fc03d84a1bbbf782d1a7d6544, type: 2}
 --- !u!1 &1496081925
 GameObject:
   m_ObjectHideFlags: 0

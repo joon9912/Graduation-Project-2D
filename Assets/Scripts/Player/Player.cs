@@ -1,19 +1,22 @@
-// Player.cs
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    #region Variables 
+    #region Components
     [Header("Components")]
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Animator animator;
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private Movement movement;
     [SerializeField] private InputHandler inputHandler;
+    #endregion
 
+    #region Data
     [Header("Data")]
     [SerializeField] private PlayerData playerData;
+    #endregion
 
+    #region Properties
     public Rigidbody2D RB => rb;
     public Animator Animator => animator;
     public SpriteRenderer SpriteRenderer => spriteRenderer;
@@ -21,38 +24,29 @@ public class Player : MonoBehaviour
     public InputHandler InputHandler => inputHandler;
 
     public StateMachine StateMachine { get; private set; }
-<<<<<<< Updated upstream
-    public InputHandler InputHandler { get; private set; }
-
-    // State들 
-=======
     public PlayerIdleState IdleState { get; private set; }
     public PlayerWalkState WalkState { get; private set; }
     #endregion
->>>>>>> Stashed changes
 
-    #region Unity 생명주기 메서드
+    #region Unity Lifecycle
     private void Awake()
     {
+        // 필수 컴포넌트 자동 캐싱
         if (!rb) rb = GetComponent<Rigidbody2D>();
         if (!spriteRenderer) spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         if (!animator) animator = GetComponentInChildren<Animator>();
         if (!movement) movement = GetComponent<Movement>();
         if (!inputHandler) inputHandler = GetComponent<InputHandler>();
 
+        // 상태머신 및 상태 생성
         StateMachine = new StateMachine();
-<<<<<<< Updated upstream
-        InputHandler = GetComponent<InputHandler>();
-
-        // Idle 초기화
-=======
-        IdleState  = new PlayerIdleState(this, StateMachine, playerData);
-        WalkState  = new PlayerWalkState(this, StateMachine, playerData);
->>>>>>> Stashed changes
+        IdleState = new PlayerIdleState(this, StateMachine, playerData);
+        WalkState = new PlayerWalkState(this, StateMachine, playerData);
     }
 
     private void Start()
     {
+        // 초기 상태는 Idle
         StateMachine.Initialize(IdleState);
     }
 

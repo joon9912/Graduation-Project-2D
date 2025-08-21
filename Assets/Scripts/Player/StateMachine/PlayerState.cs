@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class PlayerState
 {
     protected Player player;
@@ -7,7 +9,6 @@ public class PlayerState
     protected bool isAnimationFinished;
     private string animBoolName;
 
-    #region Unity Callback Functions
     public PlayerState(Player player, StateMachine stateMachine, PlayerData playerData, string animBoolName)
     {
         this.player = player;
@@ -18,20 +19,18 @@ public class PlayerState
 
     public virtual void Enter()
     {
-        player.Animator.SetBool(animBoolName, true);
+        if (!string.IsNullOrEmpty(animBoolName))
+            player.Animator.SetBool(animBoolName, true);
+
+        Debug.Log($"{player.name} entered state: {GetType().Name}");
     }
 
     public virtual void Exit()
     {
-        player.Animator.SetBool(animBoolName, false);
+        if (!string.IsNullOrEmpty(animBoolName))
+            player.Animator.SetBool(animBoolName, false);
     }
 
-    public virtual void LogicUpdate()
-    {
-    }
-
-    public virtual void PhysicsUpdate()
-    {
-    }
-    #endregion
+    public virtual void LogicUpdate() { }
+    public virtual void PhysicsUpdate() { }
 }

@@ -1,5 +1,6 @@
-// StateMachine.cs
-public class StateMachine 
+using UnityEngine;
+
+public class StateMachine
 {
     public PlayerState CurrentState { get; private set; }
 
@@ -11,9 +12,21 @@ public class StateMachine
 
     public void ChangeState(PlayerState newState)
     {
-        if (newState == null || newState == CurrentState) return;
+        if (newState == null)
+        {
+            Debug.LogError("[StateMachine] ChangeState called with NULL newState");
+            return;
+        }
+        if (newState == CurrentState)
+        {
+            Debug.Log("[StateMachine] Ignored: same state");
+            return;
+        }
+
+        Debug.Log($"[StateMachine] {CurrentState?.GetType().Name ?? "null"} -> {newState.GetType().Name}");
+
         CurrentState?.Exit();
         CurrentState = newState;
-        CurrentState?.Enter();
+        CurrentState.Enter();
     }
 }

@@ -1,8 +1,8 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class Movement : MonoBehaviour
 {
-    #region Variables
     [Header("Speed")]
     [SerializeField] private float walkSpeed = 3.5f;
     [SerializeField] private float sprintSpeed = 5.5f;
@@ -15,18 +15,15 @@ public class Movement : MonoBehaviour
     public Vector2 LastMoveDir { get; private set; }
     public float CurrentSpeed { get; private set; }
     public bool IsMoving => LastMoveDir.sqrMagnitude > 0.0001f;
-    #endregion
 
-    #region Unity Callback Methods
     private void Awake()
     {
         if (!rb) rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = 0f;
         rb.freezeRotation = true;
     }
-    #endregion
-    
-    #region Movement Methods
+
+    /// <summary> 상태에서 호출해 이동 적용 </summary>
     public void Move(Vector2 dir, bool sprint, float dt)
     {
         LastMoveDir = dir.sqrMagnitude > 1f ? dir.normalized : dir;
@@ -45,5 +42,4 @@ public class Movement : MonoBehaviour
         CurrentSpeed = 0f;
         rb.linearVelocity = Vector2.zero;
     }
-    #endregion
 }
