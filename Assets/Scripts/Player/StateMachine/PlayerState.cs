@@ -1,11 +1,9 @@
 public class PlayerState
 {
-    // Blind Classes
     protected Player player;
     protected StateMachine stateMachine;
     protected PlayerData playerData;
 
-    // Blind Variables
     protected bool isAnimationFinished;
     private string animBoolName;
 
@@ -20,12 +18,12 @@ public class PlayerState
 
     public virtual void Enter()
     {
-        player.Anim.SetBool(animBoolName, true);
+        player.Animator.SetBool(animBoolName, true);
     }
 
     public virtual void Exit()
     {
-        player.Anim.SetBool(animBoolName, false);
+        player.Animator.SetBool(animBoolName, false);
     }
 
     public virtual void LogicUpdate()
