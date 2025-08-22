@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[DefaultExecutionOrder(-100)] // Player보다 먼저 갱신되도록
 public class InputHandler : MonoBehaviour
 {
     [SerializeField] private float deadZone = 0.2f;
