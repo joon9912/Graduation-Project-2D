@@ -11,9 +11,13 @@ public class Player : MonoBehaviour
     public Transform TF { get; protected set; }
 
     public StateMachine StateMachine { get; private set; }
-    public InputManager InputHandler { get; private set; }
+
+    public InputManager InputManager { get; private set; }
+    public MovementController MovementController { get; private set; }
 
     // State들 
+    public PlayerIdleState IdleState;
+    public PlayerWalkState WalkState;
 
     private void Awake()
     {
@@ -25,21 +29,26 @@ public class Player : MonoBehaviour
 
         StateMachine = new StateMachine();
 
-        // Idle 초기화
+        InputManager = GetComponentInChildren<InputManager>();
+        MovementController = GetComponentInChildren<MovementController>();
+
+        // State 초기화
+        IdleState = new PlayerIdleState(this, StateMachine, playerData, "idle");
+        WalkState = new PlayerWalkState(this, StateMachine, playerData, "walk");
     }
 
     private void Start()
     {
-        // StateMachine.Initialize(IdleState);
+        StateMachine.Initialize(IdleState);
     }
 
     private void Update()
     {
-
+        StateMachine.CurrentState.LogicUpdate();
     }
 
     private void FixedUpdate()
     {
-        
+        StateMachine.CurrentState.PhysicsUpdate();
     }
 }
