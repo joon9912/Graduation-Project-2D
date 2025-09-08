@@ -5,8 +5,6 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private PlayerData playerData;
 
-    public Core Core { get; private set; }
-
     public Animator Anim { get; protected set; }
     public Rigidbody2D RB { get; protected set; }
     public SpriteRenderer SR { get; protected set; }
@@ -19,7 +17,6 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        Core = GetComponentInChildren<Core>();
 
         Anim = GetComponent<Animator>();
         RB = GetComponent<Rigidbody2D>();
@@ -38,7 +35,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        Core.LogicUpdate();
+
     }
 
     private void FixedUpdate()
